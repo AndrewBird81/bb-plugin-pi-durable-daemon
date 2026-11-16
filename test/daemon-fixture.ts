@@ -23,7 +23,7 @@ export async function startDaemon(lib: string, dir: string, responses: unknown[]
 	const registry = createRegistry();
 	const harness = await openHarness({ storage: await openNodeSqliteStorage(join(dir, "harness.sqlite")), models, cwd: dir, context, registry });
 	harness.resume();
-	const defaultModel = { provider: "faux", modelId: "faux-1" };
+	const defaultModel = async () => ({ provider: "faux", modelId: "faux-1" });
 	const served = await serve({ harness, path: join(dir, "d.sock"), services: createServices({ harness, registry, models, defaultModel }) });
 	let stopped: Promise<void> | undefined;
 	return {
