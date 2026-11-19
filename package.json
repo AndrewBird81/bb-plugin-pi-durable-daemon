@@ -11,9 +11,10 @@
     "name": "Pi Durable daemon",
     "description": "Run bb threads as conversations of a pi-durable daemon on the host.",
     "branding": {
-      "icon": "Database"
+      "icon": "./assets/pi-durable.svg"
     },
     "server": "./server.ts",
+    "app": "./app.tsx",
     "host": "./host.ts"
   },
   "keywords": [
@@ -30,6 +31,7 @@
   },
   "devDependencies": {
     "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
     "typescript": "^5.9.0"
   }
 }

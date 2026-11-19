@@ -4,8 +4,10 @@
     "target": "ES2023",
     "module": "ESNext",
     "moduleResolution": "bundler",
+    "jsx": "react-jsx",
     "lib": [
-      "ES2023"
+      "ES2023",
+      "DOM"
     ],
     "noEmit": true,
     "skipLibCheck": true,
@@ -16,6 +18,7 @@
   },
   "include": [
     "*.ts",
+    "*.tsx",
     "src",
     "test"
   ],

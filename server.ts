@@ -1,15 +1,17 @@
 import type { BbPluginApi } from "@get-bb/plugin-sdk";
+import { PI_DURABLE_TINT } from "./src/icon-paths.ts";
 import { PROVIDER_ID, REASONING_LEVELS } from "./src/vocabulary.ts";
 
 export default function plugin(bb: BbPluginApi) {
 	bb.providers.register({
 		id: PROVIDER_ID,
 		displayName: "Pi Durable",
-		icon: "Database",
+		icon: "./assets/pi-durable.svg",
 		strings: {
 			signInHint: "Models and logins are the pi-durable daemon's: run `pi` on the machine to sign in.",
 			expiredHint: "A login of the pi-durable daemon expired. Run `pi` on the machine, then reload.",
 			installUrl: "https://github.com/AndrewBird81/bb-plugin-pi-durable-daemon",
+			iconTint: { light: PI_DURABLE_TINT, dark: PI_DURABLE_TINT },
 		},
 		// Shown only on hosts where the daemon's client is installed (provider/health).
 		experimental_visibility: "installed",
